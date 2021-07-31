@@ -42,7 +42,7 @@ class HomeScreenActivity : AppCompatActivity(), AlbumItemClickListener {
 
     override fun onItemClicked(albums: Albums) {
         val albumName = albums.album_name
-        val intent = Intent(this, ShowImageActivity::class.java)
+        val intent = Intent(this, ShowCapturedImageActivity::class.java)
         intent.putExtra("data", albumName)
         startActivity(intent)
     }

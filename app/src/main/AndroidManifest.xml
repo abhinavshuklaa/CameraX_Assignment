@@ -18,14 +18,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CameraXAlbums">
-        <activity android:name=".ShowImageActivity"></activity>
-        <activity android:name=".HomeScreenActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".viewPager.ViewPagerIntroductoryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".PreviewImageActivity" />
+        <activity android:name=".ShowCapturedImageActivity" />
+        <activity android:name=".HomeScreenActivity" />
+        <activity android:name=".MainActivity">
+
         </activity>
 
         <meta-data

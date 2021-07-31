@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:elevation="12dp"
     android:id="@+id/cardViewAlbum"
+    android:layout_margin="5dp"
     app:cardBackgroundColor="#FAE3FF"
     app:cardCornerRadius="12dp">
 
