@@ -8,4 +8,5 @@
     <string name="enter_your_album_name">Enter your album Name</string>
     <string name="name_your_personalised_album">Name your Personalised Album</string>
     <string name="albumImage">AlbumImage</string>
+    <string name="imagepath">imagePath</string>
 </resources>

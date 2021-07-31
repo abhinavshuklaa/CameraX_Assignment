@@ -1,4 +1,4 @@
-package com.example.cameraxalbums.viewPager
+package com.example.cameraxalbums.view.viewPager
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

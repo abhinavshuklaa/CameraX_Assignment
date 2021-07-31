@@ -7,7 +7,7 @@
     app:cardCornerRadius="12dp"
     app:cardElevation="15dp"
     android:backgroundTint="#FAE3FF"
-    tools:context=".viewPager.SplashScreenFragment">
+    tools:context=".view.viewPager.SplashScreenFragment">
 
     <ImageView
         android:layout_width="300dp"
@@ -15,6 +15,16 @@
         android:layout_gravity="center"
         android:contentDescription="splashIcon"
         android:src="@drawable/splash" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Started"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="22sp"
+        android:layout_margin="10dp"
+        android:textStyle="bold|italic"
+        android:layout_gravity="center_horizontal"/>
 
 
 </com.google.android.material.card.MaterialCardView>

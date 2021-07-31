@@ -9,7 +9,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 /***
- * This is a `M` layer in the `MVVM` architecture where we are doing the insertion and retrieval operation
+ * A class that you create that is primarily used to manage multiple data sources.
+ * This is a `M` layer in the `MVVM` architecture,
+ * where we are doing the insertion and retrieval operation
  */
 
 class ListRepository(private val context: Context) {

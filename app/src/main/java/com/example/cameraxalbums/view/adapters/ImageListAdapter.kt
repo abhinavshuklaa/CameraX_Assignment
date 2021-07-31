@@ -1,11 +1,11 @@
-package com.example.cameraxalbums.adapters
+package com.example.cameraxalbums.view.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cameraxalbums.R
-import com.example.cameraxalbums.listener.PhotoItemClickListener
-import com.example.cameraxalbums.viewHolder.DisplayPhotosViewHolder
+import com.example.cameraxalbums.view.listener.PhotoItemClickListener
+import com.example.cameraxalbums.view.viewHolder.DisplayPhotosViewHolder
 
 class ImageListAdapter(
     private val list: List<String>,

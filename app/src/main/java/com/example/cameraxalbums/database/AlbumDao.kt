@@ -5,6 +5,10 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 
+/**
+ * Data access object. A mapping of SQL queries to functions.
+ * When we use a DAO, we call the methods, and Room takes care of the rest.
+ */
 @Dao
 interface AlbumDao {
 

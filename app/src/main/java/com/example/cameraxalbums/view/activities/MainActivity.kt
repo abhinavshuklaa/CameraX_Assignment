@@ -1,15 +1,18 @@
-package com.example.cameraxalbums
+package com.example.cameraxalbums.view.activities
 
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.cameraxalbums.R
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 import java.text.SimpleDateFormat
@@ -38,6 +41,7 @@ class MainActivity : AppCompatActivity() {
     private fun handlingButtonClicks() {
         btn_capture.setOnClickListener {
             captureImage()
+            btn_capture.snack("Image Captured")
         }
         camera_switch_button.setOnClickListener {
             switchCamera()
@@ -69,6 +73,8 @@ class MainActivity : AppCompatActivity() {
             CameraSelector.LENS_FACING_FRONT
 
         }
+        captureImage()
+
 
 
     }
@@ -162,5 +168,7 @@ class MainActivity : AppCompatActivity() {
         }, ContextCompat.getMainExecutor(this))
     }
 
-
+    fun View.snack(message: String, duration: Int = Snackbar.LENGTH_LONG) {
+        Snackbar.make(this, message, duration).show()
+    }
 }

@@ -6,7 +6,7 @@
     android:background="#FAE3FF"
     android:orientation="vertical"
     android:weightSum="2"
-    tools:context=".viewPager.GetStartedFragment">
+    tools:context=".view.viewPager.GetStartedFragment">
 
 
     <ImageView
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="10dp"
-        android:fontFamily="@font/open_sans_semiBold_italic"
+        android:fontFamily="@font/open_sans_semibold_italic"
         android:text="@string/name_your_personalised_album"
         android:textSize="22sp"
         android:textStyle="bold|italic" />
@@ -36,7 +36,7 @@
         android:layout_gravity="center_vertical"
         android:layout_margin="10dp"
         android:autofillHints="My Repo"
-        android:fontFamily="@font/open_sans_semiBold_italic"
+        android:fontFamily="@font/open_sans_semibold_italic"
         android:hint="@string/enter_your_album_name"
         android:inputType="textAutoCorrect"
         android:textSize="22sp"

@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAE3FF"
-    android:elevation="12dp"
-    app:cardElevation="12dp"
-    tools:context=".ShowCapturedImageActivity">
+    android:layout_margin="5dp"
+    android:background="#2E2C50"
+    android:orientation="vertical"
+    tools:context=".view.activities.ShowCapturedImageActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewShowImages"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_margin="5dp"
-        android:layout_marginStart="10dp"
         android:background="@android:color/white" />
-</androidx.cardview.widget.CardView>
+</LinearLayout>

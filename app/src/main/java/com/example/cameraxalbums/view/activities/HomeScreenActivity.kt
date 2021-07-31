@@ -1,12 +1,13 @@
-package com.example.cameraxalbums
+package com.example.cameraxalbums.view.activities
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
-import com.example.cameraxalbums.adapters.AlbumsListAdapter
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.cameraxalbums.R
+import com.example.cameraxalbums.view.adapters.AlbumsListAdapter
 import com.example.cameraxalbums.database.Albums
-import com.example.cameraxalbums.listener.AlbumItemClickListener
+import com.example.cameraxalbums.view.listener.AlbumItemClickListener
 import com.example.cameraxalbums.viewModel.AlbumLogicViewModel
 import com.example.cameraxalbums.viewModel.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_home_screen.*
@@ -30,7 +31,7 @@ class HomeScreenActivity : AppCompatActivity(), AlbumItemClickListener {
     }
 
     private fun setRecyclerAdapter(it: List<Albums>) {
-        val gridLayoutManager = GridLayoutManager(this, 3)
+        val gridLayoutManager = StaggeredGridLayoutManager(2, 1)
         val albumsListAdapter = AlbumsListAdapter(it, this)
         recyclerViewShowAlbums.apply {
             layoutManager = gridLayoutManager

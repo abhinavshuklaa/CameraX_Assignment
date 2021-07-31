@@ -7,7 +7,9 @@ import com.example.cameraxalbums.database.Albums
 import com.masai_technology.cameraapp.repository.ListRepository
 
 /***
- * This will list all the albums_name and insert into the database
+ * Acts as a communication center between the Repository (data) and the UI.
+ * ViewModel instances survive Activity/Fragment recreation.
+ * This will give us the list all the albums_name and insert into the database
  */
 class AlbumLogicViewModel(private val context: Context) : ViewModel() {
     private val repository = ListRepository(context)

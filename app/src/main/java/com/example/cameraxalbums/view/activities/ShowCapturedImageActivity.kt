@@ -1,11 +1,12 @@
-package com.example.cameraxalbums
+package com.example.cameraxalbums.view.activities
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.cameraxalbums.adapters.ImageListAdapter
-import com.example.cameraxalbums.listener.PhotoItemClickListener
+import com.example.cameraxalbums.R
+import com.example.cameraxalbums.view.adapters.ImageListAdapter
+import com.example.cameraxalbums.view.listener.PhotoItemClickListener
 import kotlinx.android.synthetic.main.activity_show_image.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

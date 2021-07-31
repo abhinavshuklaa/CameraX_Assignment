@@ -1,4 +1,4 @@
-package com.example.cameraxalbums.viewPager
+package com.example.cameraxalbums.view.viewPager
 
 import android.os.Bundle
 import android.view.LayoutInflater

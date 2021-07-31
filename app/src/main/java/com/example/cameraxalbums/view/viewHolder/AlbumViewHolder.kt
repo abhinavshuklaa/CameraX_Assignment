@@ -1,9 +1,9 @@
-package com.example.cameraxalbums.viewHolder
+package com.example.cameraxalbums.view.viewHolder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cameraxalbums.database.Albums
-import com.example.cameraxalbums.listener.AlbumItemClickListener
+import com.example.cameraxalbums.view.listener.AlbumItemClickListener
 import kotlinx.android.synthetic.main.show_albums_item_layout.view.*
 
 class AlbumViewHolder(

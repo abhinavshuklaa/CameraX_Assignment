@@ -1,12 +1,12 @@
-package com.example.cameraxalbums.adapters
+package com.example.cameraxalbums.view.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cameraxalbums.R
 import com.example.cameraxalbums.database.Albums
-import com.example.cameraxalbums.listener.AlbumItemClickListener
-import com.example.cameraxalbums.viewHolder.AlbumViewHolder
+import com.example.cameraxalbums.view.listener.AlbumItemClickListener
+import com.example.cameraxalbums.view.viewHolder.AlbumViewHolder
 
 class AlbumsListAdapter(
     private var ModelList: List<Albums>,

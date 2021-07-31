@@ -1,4 +1,4 @@
-package com.example.cameraxalbums.viewPager
+package com.example.cameraxalbums.view.viewPager
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.cameraxalbums.MainActivity
+import com.example.cameraxalbums.view.activities.MainActivity
 import com.example.cameraxalbums.R
 import com.example.cameraxalbums.database.Directory
 import com.example.cameraxalbums.viewModel.AlbumLogicViewModel
