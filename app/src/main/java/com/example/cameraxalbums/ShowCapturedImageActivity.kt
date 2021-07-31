@@ -57,6 +57,9 @@ class ShowCapturedImageActivity : AppCompatActivity(), PhotoItemClickListener {
         }
     }
 
+    /**
+     *Handling the clicks for each album in a recyclerView
+     */
     override fun onPhotoClicked(position: Int, p: String) {
         val intent = Intent(this, PreviewImageActivity::class.java)
         intent.putExtra("display_image", p)

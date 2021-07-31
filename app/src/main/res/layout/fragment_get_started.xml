@@ -5,14 +5,16 @@
     android:layout_height="match_parent"
     android:background="#FAE3FF"
     android:orientation="vertical"
+    android:weightSum="2"
     tools:context=".viewPager.GetStartedFragment">
 
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="0dp"
         android:layout_margin="4dp"
-        android:contentDescription="AlbumImage"
+        android:layout_weight="1"
+        android:contentDescription="@string/albumImage"
         android:src="@drawable/album" />
 
 
@@ -21,8 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="10dp"
-        android:fontFamily="@font/open_sans_semibold_italic"
-        android:text="Name your Personalised Album"
+        android:fontFamily="@font/open_sans_semiBold_italic"
+        android:text="@string/name_your_personalised_album"
         android:textSize="22sp"
         android:textStyle="bold|italic" />
 
@@ -33,9 +35,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_margin="10dp"
-        android:fontFamily="@font/open_sans_semibold_italic"
-        android:hint="Enter your album Name"
-        android:text="Name your Personalised Album"
+        android:autofillHints="My Repo"
+        android:fontFamily="@font/open_sans_semiBold_italic"
+        android:hint="@string/enter_your_album_name"
+        android:inputType="textAutoCorrect"
         android:textSize="22sp"
         android:textStyle="bold|italic" />
 
@@ -44,6 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_margin="10dp"
         android:src="@drawable/ic_baseline_photo_album_24" />
 
 

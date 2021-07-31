@@ -5,4 +5,7 @@
     <string name="gallery_button_alt">Gallery</string>
     <string name="capture_button_alt">Capture</string>
     <string name="switch_camera_button_alt">Switch Camera</string>
+    <string name="enter_your_album_name">Enter your album Name</string>
+    <string name="name_your_personalised_album">Name your Personalised Album</string>
+    <string name="albumImage">AlbumImage</string>
 </resources>

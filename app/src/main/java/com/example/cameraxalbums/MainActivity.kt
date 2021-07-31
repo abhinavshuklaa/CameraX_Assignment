@@ -4,7 +4,6 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.*
@@ -28,34 +27,45 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if (ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.CAMERA
-            ) == PackageManager.PERMISSION_GRANTED
-        ) {
-            Start_Camera()
-        } else {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), 0)
-        }
+        checkPermissionInOnCreate()
+        handlingButtonClicks()
+
+    }
+
+    /**
+     * This method is for handling the button Clicks for Camera Operation
+     */
+    private fun handlingButtonClicks() {
         btn_capture.setOnClickListener {
-            Take_Images()
+            captureImage()
         }
         camera_switch_button.setOnClickListener {
-            switchCamera(it)
+            switchCamera()
         }
 
         btn_show_images.setOnClickListener {
             val intent = Intent(this, HomeScreenActivity::class.java)
             startActivity(intent)
         }
-
     }
 
-    private fun switchCamera(view: View) {
+    private fun checkPermissionInOnCreate() {
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.CAMERA
+            ) == PackageManager.PERMISSION_GRANTED
+        ) {
+            startCamera()
+        } else {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), 0)
+        }
+    }
 
-        lensFacing= if (CameraSelector.LENS_FACING_FRONT == lensFacing){
+    private fun switchCamera() {
+
+        lensFacing = if (CameraSelector.LENS_FACING_FRONT == lensFacing) {
             CameraSelector.LENS_FACING_BACK
-        }else{
+        } else {
             CameraSelector.LENS_FACING_FRONT
 
         }
@@ -80,7 +90,7 @@ class MainActivity : AppCompatActivity() {
     /***
      * Overhere we are saving the images with the help of Current TimeStamp
      */
-    private fun Take_Images() {
+    private fun captureImage() {
         //save_photo
         val mediaDir = File(
             getOutputDirectory(), SimpleDateFormat(
@@ -91,9 +101,9 @@ class MainActivity : AppCompatActivity() {
         /***
          * Overhere we are defining were we will save our output file
          */
-        val output_res = ImageCapture.OutputFileOptions.Builder(mediaDir).build()
+        val resultImage = ImageCapture.OutputFileOptions.Builder(mediaDir).build()
         imageCapture?.takePicture(
-            output_res,
+            resultImage,
             ContextCompat.getMainExecutor(this),
             object : ImageCapture.OnImageSavedCallback {
                 override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
@@ -123,7 +133,7 @@ class MainActivity : AppCompatActivity() {
                 Manifest.permission.CAMERA
             ) == PackageManager.PERMISSION_GRANTED
         ) {
-            Start_Camera()
+            startCamera()
         } else {
             Toast.makeText(this, "Accept the Permission For camera", Toast.LENGTH_SHORT).show()
         }
@@ -132,24 +142,23 @@ class MainActivity : AppCompatActivity() {
     /***
      * Overhere we are binding the camera with the app lifecycle and also previewing the camera
      */
-    private fun Start_Camera() {
-        //startcamera
+    private fun startCamera() {
         /***
-         * This one will tell us that if the camera has been binded with the app lifecycle or not
+         * This method here will check if the camera has been attached with the application lifecycle.
          */
         val cameraProvider = ProcessCameraProvider.getInstance(this)
         cameraProvider.addListener({
-            val cameraProvider_new = cameraProvider.get()
+            val cameraProvider1 = cameraProvider.get()
             preview = Preview.Builder().build()
             preview?.setSurfaceProvider(camera_view.surfaceProvider)
 
 //            preview?.setSurfaceProvider(camera_view.createSurfaceProvider(camera?.cameraInfo))
             imageCapture = ImageCapture.Builder().build()
-            val camera_selector =
+            val cameraSelector =
                 CameraSelector.Builder().requireLensFacing(CameraSelector.LENS_FACING_BACK).build()
-            cameraProvider_new.unbindAll()
+            cameraProvider1.unbindAll()
             camera =
-                cameraProvider_new.bindToLifecycle(this, camera_selector, preview, imageCapture)
+                cameraProvider1.bindToLifecycle(this, cameraSelector, preview, imageCapture)
         }, ContextCompat.getMainExecutor(this))
     }
 

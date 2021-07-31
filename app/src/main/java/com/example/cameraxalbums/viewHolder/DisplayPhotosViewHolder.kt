@@ -4,7 +4,7 @@ import android.graphics.BitmapFactory
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cameraxalbums.listener.PhotoItemClickListener
-import kotlinx.android.synthetic.main.item_image.view.*
+import kotlinx.android.synthetic.main.image_item_layout.view.*
 
 class DisplayPhotosViewHolder(
     var view: View,

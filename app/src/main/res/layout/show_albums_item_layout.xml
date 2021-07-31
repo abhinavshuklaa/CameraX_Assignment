@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="5dp"
-            android:fontFamily="@font/open_sans_semibold_italic"
+            android:fontFamily="@font/open_sans_semiBold_italic"
             android:text="My Photos"
             android:textColor="#9DA5E3"
             android:textSize="18sp"

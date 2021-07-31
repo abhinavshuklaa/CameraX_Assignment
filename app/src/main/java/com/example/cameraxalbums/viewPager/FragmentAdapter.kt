@@ -1,6 +1,5 @@
 package com.example.cameraxalbums.viewPager
 
-import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
@@ -16,15 +15,15 @@ class FragmentAdapter(fm: FragmentManager, behavior: Int) :
 
     override fun getItem(position: Int): Fragment {
         when (position) {
-            0->{
-                return SplashScreenFragment.newInstance("This is first Fragment","FirstFragment")
+            0 -> {
+                return SplashScreenFragment.newInstance("This is first Fragment", "FirstFragment")
             }
-            1->{
-                return GetStartedFragment.newInstance("This is second Fragment","SecondFragment")
+            1 -> {
+                return GetStartedFragment.newInstance("This is second Fragment", "SecondFragment")
 
             }
         }
-        return GetStartedFragment.newInstance("This is second Fragment","SecondFragment")
+        return GetStartedFragment.newInstance("This is second Fragment", "SecondFragment")
 
     }
 
