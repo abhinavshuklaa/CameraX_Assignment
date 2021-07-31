@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.*
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity() {
     private var camera: Camera? = null
     private var preview: Preview? = null
     private var imageCapture: ImageCapture? = null
+    private var lensFacing: Int = CameraSelector.LENS_FACING_BACK
+
     private val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,10 +40,26 @@ class MainActivity : AppCompatActivity() {
         btn_capture.setOnClickListener {
             Take_Images()
         }
+        camera_switch_button.setOnClickListener {
+            switchCamera(it)
+        }
+
         btn_show_images.setOnClickListener {
             val intent = Intent(this, HomeScreenActivity::class.java)
             startActivity(intent)
         }
+
+    }
+
+    private fun switchCamera(view: View) {
+
+        lensFacing= if (CameraSelector.LENS_FACING_FRONT == lensFacing){
+            CameraSelector.LENS_FACING_BACK
+        }else{
+            CameraSelector.LENS_FACING_FRONT
+
+        }
+
 
     }
 
@@ -123,6 +142,7 @@ class MainActivity : AppCompatActivity() {
             val cameraProvider_new = cameraProvider.get()
             preview = Preview.Builder().build()
             preview?.setSurfaceProvider(camera_view.surfaceProvider)
+
 //            preview?.setSurfaceProvider(camera_view.createSurfaceProvider(camera?.cameraInfo))
             imageCapture = ImageCapture.Builder().build()
             val camera_selector =
