@@ -9,4 +9,5 @@
     <string name="name_your_personalised_album">Name your Personalised Album</string>
     <string name="albumImage">AlbumImage</string>
     <string name="imagepath">imagePath</string>
+    <string name="start_clicking_photos">Start clicking photos</string>
 </resources>

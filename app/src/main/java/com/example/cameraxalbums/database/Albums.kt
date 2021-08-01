@@ -4,6 +4,9 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+/**
+ * This class represents a table within the database.
+ */
 @Entity(tableName = "albums")
 class Albums(
     @PrimaryKey(autoGenerate = true)

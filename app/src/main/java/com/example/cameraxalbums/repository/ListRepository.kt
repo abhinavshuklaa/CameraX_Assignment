@@ -20,6 +20,10 @@ class ListRepository(private val context: Context) {
         return AlbumsDatabaseClient.getDatabase(context).albumDao().fetchAlbumDetails()
     }
 
+    /**
+     *  * This function uses coroutines to run multiple tasks in parallel
+
+     */
     fun insertAlbumsDetails(id: Int, name: String, context: Context) {
         CoroutineScope(Dispatchers.IO).launch {
 

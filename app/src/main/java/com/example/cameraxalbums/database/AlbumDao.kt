@@ -12,9 +12,15 @@ import androidx.room.Query
 @Dao
 interface AlbumDao {
 
+    /**
+     * function used to Insert albums data into the databse
+     */
     @Insert
     fun insertAlbumDetails(albums: Albums)
 
+    /**
+     *The methods used for accessing the database.
+     */
     @Query("Select * from albums")
     fun fetchAlbumDetails(): LiveData<List<Albums>>
 

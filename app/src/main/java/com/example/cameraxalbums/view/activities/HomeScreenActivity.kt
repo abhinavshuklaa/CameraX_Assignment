@@ -12,6 +12,10 @@ import com.example.cameraxalbums.viewModel.AlbumLogicViewModel
 import com.example.cameraxalbums.viewModel.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_home_screen.*
 
+/**
+ *  This Activity displays the List of student stored in the database,
+ *  Here the user can see all the list of albums he/she has created in the form of beautiful grids.
+ */
 class HomeScreenActivity : AppCompatActivity(), AlbumItemClickListener {
     private lateinit var viewModel: AlbumLogicViewModel
 

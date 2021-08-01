@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -42,13 +43,27 @@
         android:textSize="22sp"
         android:textStyle="bold|italic" />
 
-    <androidx.appcompat.widget.AppCompatImageButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/iBtnCreateAlbum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:src="@drawable/ic_baseline_photo_album_24" />
+        android:layout_gravity="center_horizontal"
+        android:elevation="12dp"
+        android:fontFamily="@font/open_sans_semibold_italic"
+        android:text="@string/start_clicking_photos"
+        android:textColor="#ff407a"
+        android:textSize="24sp"
+        app:backgroundTint="#FAE3FF"
+        app:cornerRadius="12dp" />
+
+
+    <!--    <androidx.appcompat.widget.AppCompatImageButton-->
+    <!--        android:id="@+id/iBtnCreateAlbum"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:layout_margin="10dp"-->
+    <!--        android:src="@drawable/ic_baseline_photo_album_24" />-->
 
 
 </LinearLayout>

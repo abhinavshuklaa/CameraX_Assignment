@@ -11,7 +11,9 @@ class PreviewImageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_preview_image)
-
+        /**
+         * Setting the image bitmap.
+         */
         val previewImage = getImageDataFromIntent()
         val myBitmap = BitmapFactory.decodeFile(previewImage)
         setImageBitmap(myBitmap)

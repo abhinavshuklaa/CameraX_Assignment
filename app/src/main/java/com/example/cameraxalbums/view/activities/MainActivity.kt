@@ -53,6 +53,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * function checking & requesting where the Camera and storage permission is granted
+     */
     private fun checkPermissionInOnCreate() {
         if (ContextCompat.checkSelfPermission(
                 this,
@@ -65,6 +68,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Switching the camera (front & rear)
+     */
     private fun switchCamera() {
 
         lensFacing = if (CameraSelector.LENS_FACING_FRONT == lensFacing) {
@@ -76,11 +82,10 @@ class MainActivity : AppCompatActivity() {
         captureImage()
 
 
-
     }
 
     /***
-     * In this I am getting the directory name(album name ) via intent
+     *This function is used for getting the directory name (album name) via intent
      * Over here it will pass the media directory from external
      * storage of the device
      */
@@ -94,10 +99,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     /***
-     * Overhere we are saving the images with the help of Current TimeStamp
+     * This function is saving the images with the help of Current TimeStamp
      */
     private fun captureImage() {
-        //save_photo
         val mediaDir = File(
             getOutputDirectory(), SimpleDateFormat(
                 FILENAME_FORMAT, Locale.US
@@ -105,7 +109,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         /***
-         * Overhere we are defining were we will save our output file
+         * This function is defining where we will save our output file
          */
         val resultImage = ImageCapture.OutputFileOptions.Builder(mediaDir).build()
         imageCapture?.takePicture(
@@ -126,7 +130,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     /***
-     * Overhere we are Taking permission from the user to open the Camera
+     * This function is for taking permission from the user to open the Camera
      */
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -146,7 +150,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     /***
-     * Overhere we are binding the camera with the app lifecycle and also previewing the camera
+     * This function is used for binding the camera with the app lifecycle and previewing the camera
      */
     private fun startCamera() {
         /***
@@ -158,7 +162,6 @@ class MainActivity : AppCompatActivity() {
             preview = Preview.Builder().build()
             preview?.setSurfaceProvider(camera_view.surfaceProvider)
 
-//            preview?.setSurfaceProvider(camera_view.createSurfaceProvider(camera?.cameraInfo))
             imageCapture = ImageCapture.Builder().build()
             val cameraSelector =
                 CameraSelector.Builder().requireLensFacing(CameraSelector.LENS_FACING_BACK).build()

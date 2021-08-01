@@ -6,6 +6,10 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 
+/**
+ * Contains the database holder.
+ * It serves as the main access point for the underlying connection to the app's persisted, relational data.
+ */
 @Database(entities = [Albums::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AlbumsDatabaseClient : RoomDatabase() {

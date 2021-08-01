@@ -6,6 +6,9 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.example.cameraxalbums.R
 import kotlinx.android.synthetic.main.activity_view_pager_indroductory.*
 
+/**
+ * This Activity demonstrates a simple view pager where there are 2 Fragments.
+ */
 class ViewPagerIntroductoryActivity : AppCompatActivity() {
     private lateinit var fragmentAdapter: FragmentAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +25,9 @@ class ViewPagerIntroductoryActivity : AppCompatActivity() {
 
     }
 
+    /**
+     *This method sets data to the View Pager Adapter class
+     */
     private fun setViewPagerAdapter() {
         fragmentAdapter = FragmentAdapter(
             supportFragmentManager,

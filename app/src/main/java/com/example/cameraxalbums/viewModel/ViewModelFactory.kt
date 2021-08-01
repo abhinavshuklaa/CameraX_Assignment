@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
 /***
- * This ViewModelFactory is used when an instance of viewmodel is required
+ * This ViewModelFactory is used when an instance of view model is required
  */
 class ViewModelFactory(private val context: Context) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
