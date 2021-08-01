@@ -20,21 +20,22 @@ import org.robolectric.annotation.Config
 @Config(manifest = Config.NONE)
 class DataBaseTest {
     private lateinit var database: AlbumsDatabaseClient
-    private lateinit var dao:AlbumDao
+    private lateinit var dao: AlbumDao
 
     @Before
-    fun initDb(){
+    fun initDb() {
         val context = ApplicationProvider.getApplicationContext<Context>()
         database = Room.inMemoryDatabaseBuilder(
             context,
-            AlbumsDatabaseClient::class.java).build()
+            AlbumsDatabaseClient::class.java
+        ).build()
         dao = database.albumDao()
 
     }
 
     @Test
-    fun insertData(){
-        val taskEntity = Albums(2,"sample album",7777)
+    fun insertData() {
+        val taskEntity = Albums(2, "sample album", 7777)
         CoroutineScope(Dispatchers.IO).launch {
             dao.insertAlbumDetails(taskEntity)
 

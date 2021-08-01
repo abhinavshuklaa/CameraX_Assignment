@@ -16,7 +16,7 @@
         android:layout_margin="4dp"
         android:layout_weight="1"
         android:contentDescription="@string/albumImage"
-        android:src="@drawable/album" />
+        android:src="@drawable/album_dashboard" />
 
 
     <TextView
