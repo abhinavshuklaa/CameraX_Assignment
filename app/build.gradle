@@ -21,6 +21,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -99,4 +103,14 @@ dependencies {
     //WindowManager
     implementation 'androidx.window:window:1.0.0-alpha09'
 
+    //Libraries for Unit Tests
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation "android.arch.core:" +
+            "core-testing:1.1.0"
+    testImplementation 'org.robolectric:robolectric:4.0'
+    testImplementation "com.android.support.test.espresso:espresso-core:3.0.2"
+    testImplementation "androidx.test.ext:junit-ktx:1.1.2-beta01"
+    androidTestImplementation "androidx.test.ext:junit-ktx:1.1.2-beta01"
+    androidTestImplementation "org.mockito:mockito-core:2.27.0"
+    testImplementation "org.mockito:mockito-core:2.27.0"
 }
